@@ -1,9 +1,9 @@
 ---
-title: Adding wattermarks to a video
-description: The most basic Pipeless example adding a wattermark to a video
+title: Adding watermarks to a video
+description: The most basic Pipeless example adding a watermark to a video
 ---
 
-# Adding wattermarks to a video
+# Adding watermarks to a video
 
 import { Steps, Callout } from 'nextra/components';
 
@@ -35,7 +35,7 @@ cd my-project
 ### Download the stage folder
 
 ```bash copy
-wget -O - https://github.com/pipeless-ai/pipeless/archive/main.tar.gz | tar -xz --strip=2 "pipeless-main/examples/wattermark"
+wget -O - https://github.com/pipeless-ai/pipeless/archive/main.tar.gz | tar -xz --strip=2 "pipeless-main/examples/watermark"
 ```
 
 ### Update the XML file path inside `init.py`
@@ -46,7 +46,7 @@ Update the line highlighted below to the actual path in your system (use an abso
 def hook(frame, context):
      pil_image = Image.fromarray(frame['modified'])
      text = "Hello pipeless!"
-     font = ImageFont.truetype(font='/home/path/pipeless/examples/wattermark/font.ttf', size=60)
+     font = ImageFont.truetype(font='/home/path/pipeless/examples/watermark/font.ttf', size=60)
      text_color = (255, 0, 255)
 ```
 
@@ -63,7 +63,7 @@ pipeless start --stages-dir .
 Open a new terminal and run:
 
 ```bash copy
-pipeless add stream --input-uri "v4l2" --output-uri "screen" --frame-path "wattermark"
+pipeless add stream --input-uri "v4l2" --output-uri "screen" --frame-path "watermark"
 ```
 
 This command assumes you have a webcam available, if you don't just change the input URI.
